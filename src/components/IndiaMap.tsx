@@ -140,8 +140,8 @@ export default function IndiaMap({ onSelectState }: IndiaMapProps) {
                             ? '#FFE599'
                             : '#F7EBCB'
                     }
-                    stroke={isSelected ? '#fff' : '#CC9900'}
-                    strokeWidth={isSelected ? 1.6 : 0.6}
+                    stroke={isSelected ? '#fff' : isHovered ? '#A02E3A' : '#B8860B'}
+                    strokeWidth={isSelected ? 2 : isHovered ? 1.2 : 0.8}
                     filter={isHovered || isSelected ? 'url(#stateGlow)' : undefined}
                     className="india-state"
                     style={{
