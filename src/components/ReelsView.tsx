@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Filter, ChevronDown, Video } from 'lucide-react';
+import { X, ListFilter as Filter, ChevronDown, Video } from 'lucide-react';
 import { reels, states } from '@/data/states';
 import { ReelCard } from '@/components/Cards';
 

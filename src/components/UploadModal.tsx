@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Upload, Image as ImageIcon, Video, FileText, MapPin, CheckCircle2, ChevronRight } from 'lucide-react';
+import { X, Upload, Image as ImageIcon, Video, FileText, MapPin, CircleCheck as CheckCircle2, ChevronRight } from 'lucide-react';
 import { states } from '@/data/states';
 import { useApp, type UploadedContent } from '@/context/AppContext';
 

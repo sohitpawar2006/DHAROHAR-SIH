@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, UtensilsCrossed, Sparkles, Calendar, Clock, Navigation, Plus, CheckCircle2 } from 'lucide-react';
+import { X, MapPin, UtensilsCrossed, Sparkles, Calendar, Clock, Navigation, Plus, CircleCheck as CheckCircle2 } from 'lucide-react';
 import { getStateById } from '@/data/states';
 
 type TripPlannerProps = {

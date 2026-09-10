@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Loader2, Mail, Lock, User as UserIcon, AtSign, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Loader as Loader2, Mail, Lock, User as UserIcon, AtSign, CircleCheck as CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 
