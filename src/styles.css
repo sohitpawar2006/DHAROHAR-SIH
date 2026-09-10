@@ -1,0 +1,402 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@theme {
+  --font-sans: Outfit, system-ui, sans-serif;
+  --font-devanagari: "Tiro Devanagari Hindi", serif;
+  --color-saffron-50: #FFF5EB;
+  --color-saffron-100: #FFE6CC;
+  --color-saffron-200: #FFCC99;
+  --color-saffron-300: #FFB366;
+  --color-saffron-400: #FF9933;
+  --color-saffron-500: #FF8C2A;
+  --color-saffron-600: #E6731A;
+  --color-saffron-700: #CC5C0A;
+  --color-saffron-800: #A6470A;
+  --color-saffron-900: #80380A;
+  --color-maroon-50: #FBEEF0;
+  --color-maroon-100: #F5D5D8;
+  --color-maroon-200: #EBAAB0;
+  --color-maroon-300: #E08088;
+  --color-maroon-400: #D05560;
+  --color-maroon-500: #C13A47;
+  --color-maroon-600: #A02E3A;
+  --color-maroon-700: #80232D;
+  --color-maroon-800: #601A22;
+  --color-maroon-900: #401216;
+  --color-royal-50: #EEF2FF;
+  --color-royal-100: #D8E0FF;
+  --color-royal-200: #B0C0FF;
+  --color-royal-300: #88A0FF;
+  --color-royal-400: #6080FF;
+  --color-royal-500: #3D5AFE;
+  --color-royal-600: #2A3FCC;
+  --color-royal-700: #1F3099;
+  --color-royal-800: #162266;
+  --color-royal-900: #0D1133;
+  --color-peacock-50: #E8FBF7;
+  --color-peacock-100: #C4F3E8;
+  --color-peacock-200: #88E6D0;
+  --color-peacock-300: #4DD9B8;
+  --color-peacock-400: #1FCC9F;
+  --color-peacock-500: #0BA884;
+  --color-peacock-600: #08856A;
+  --color-peacock-700: #066250;
+  --color-peacock-800: #043F36;
+  --color-peacock-900: #022D24;
+  --color-mustard-50: #FFFAEB;
+  --color-mustard-100: #FFF2CC;
+  --color-mustard-200: #FFE599;
+  --color-mustard-300: #FFD966;
+  --color-mustard-400: #FFCC33;
+  --color-mustard-500: #F5B800;
+  --color-mustard-600: #CC9900;
+  --color-mustard-700: #A67B00;
+  --color-mustard-800: #805E00;
+  --color-mustard-900: #5A4200;
+  --color-cream-50: #FFFEF9;
+  --color-cream-100: #FFFDF2;
+  --color-cream-200: #FFFBEB;
+  --color-cream-300: #FFF7DC;
+  --color-cream-400: #FFF0C4;
+  --color-cream-500: #FBE8B8;
+  --color-ink-700: #3A2A1F;
+  --color-ink-800: #2A1E15;
+  --color-ink-900: #1A130D;
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-float-medium: float 4s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-fade-up: fadeUp 0.6s ease-out forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Outfit', system-ui, sans-serif;
+    background-color: #FFFDF2;
+    color: #2A1E15;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #FF9933;
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .font-devanagari {
+    font-family: 'Tiro Devanagari Hindi', serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #FFCC99 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #FFCC99;
+    border-radius: 3px;
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .glass {
+    background: rgba(255, 253, 242, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-dark {
+    background: rgba(26, 19, 13, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .bg-gradient-warm {
+    background-image: linear-gradient(135deg, #FFFDF2 0%, #FFF7DC 50%, #FFE6CC 100%);
+  }
+
+  .bg-gradient-saffron {
+    background-image: linear-gradient(135deg, #FF8C2A 0%, #C13A47 100%);
+  }
+
+  .bg-gradient-royal {
+    background-image: linear-gradient(135deg, #3D5AFE 0%, #1F3099 100%);
+  }
+
+  .bg-gradient-peacock {
+    background-image: linear-gradient(135deg, #0BA884 0%, #043F36 100%);
+  }
+
+  .bg-folk-pattern {
+    background-color: #FFFDF2;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 140, 42, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 24px -8px rgba(58, 42, 31, 0.12), 0 2px 8px -4px rgba(58, 42, 31, 0.06);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 24px 64px -16px rgba(58, 42, 31, 0.22), 0 8px 24px -8px rgba(58, 42, 31, 0.1);
+  }
+
+  .glow-saffron {
+    box-shadow: 0 0 0 2px rgba(255, 140, 42, 0.3), 0 0 32px rgba(255, 140, 42, 0.4);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-saffron-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-saffron-600 hover:shadow-lg hover:shadow-saffron-500/30 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-saffron-500 bg-transparent px-6 py-3 font-semibold text-saffron-600 transition-all duration-300 hover:bg-saffron-50 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 font-medium text-ink-800 transition-all duration-200 hover:bg-saffron-100/60 active:scale-95;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl md:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mt-3 max-w-2xl text-base text-ink-700/70 sm:text-lg;
+  }
+}
+
+/* India map path styling */
+.india-state {
+  fill: #FFE599;
+  stroke: #CC9900;
+  stroke-width: 0.5;
+  transition: fill 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.india-state:hover {
+  fill: #FF9933;
+}
+
+.india-state.active {
+  fill: #FF8C2A;
+}
+
+/* Reels snap scroll */
+.reels-container {
+  scroll-snap-type: y mandatory;
+}
+
+.reel-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Horizontal scroll cards */
+.h-scroll {
+  scroll-snap-type: x mandatory;
+}
+
+.h-scroll > * {
+  scroll-snap-align: start;
+}
+
+/* Mandala spinner */
+.mandala {
+  background-image: conic-gradient(from 0deg, transparent 0deg, rgba(255, 140, 42, 0.12) 30deg, transparent 60deg, rgba(193, 58, 71, 0.1) 120deg, transparent 150deg, rgba(15, 168, 132, 0.1) 240deg, transparent 270deg);
+  border-radius: 50%;
+}
